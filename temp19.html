@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+      }
+      .card {
+        margin: 20px;
+        border-width: 5px;
+        border-color: black;
+      }
+      .image{ 
+        height: 200px;
+        width: 300px;
+      }
+      .h2{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      let products = [
+        {
+          id: 1,
+          name: "Fortuner",
+          price: 800000,
+          desc: "Highway",
+          url: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Fortuner/10903/1695443447797/front-left-side-47.jpg?tr=w-664",
+        },
+        {
+          id: 2,
+          name: "Scorpio",
+          price: 8000000,
+          desc: "Black scorpio",
+          url: "https://imgd.aeplcdn.com/664x374/n/cw/ec/128413/scorpio-exterior-right-front-three-quarter-47.jpeg?isig=0&q=80",
+        },
+        {
+          id: 3,
+          name: "Lightning McQueen",
+          price: 6500000,
+          desc: "Lightning McQueen",
+          url: "https://www.variety.org.au/sa/wp-content/uploads/2021/02/Lightning-McQueen-600x400.jpg",
+        },
+      ];
+      //   console.log(products[0])
+      let len = products.length;
+      let str = "<h1 class='h2'>WELCOME TO SALES</h1> <div class='container'> "
+      for (let i = 0; i < len; i++) {
+        str += `<div class="card">
+            <img class="image" src="${products[i].url}">
+            <h2>${products[i].name}</h2>    
+            <p>${products[i].desc}</p>
+            <h3>Rs:${products[i].price}</h3>
+            <button>Buy Now</button>
+            </div>`
+      }
+      str+='</div>'
+      root.innerHTML = str;
+    </script>
+  </body>
+</html>
+  
